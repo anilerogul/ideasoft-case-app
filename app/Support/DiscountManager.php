@@ -56,7 +56,7 @@ class DiscountManager
             ->whereHas('product', function ($query) use ($discount) {
                 $query->where('category_id', $discount->condition_value);
             })
-            ->count();
+            ->sum('quantity');
 
         if ($this->checkConditionRule($discount, $categoryProductCount)) {
             $this->applyDiscount($discount);

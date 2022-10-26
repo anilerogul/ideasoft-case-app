@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->unsignedInteger('condition_rule'); // 1=more than, 2=less than, 3=equal to
             $table->unsignedInteger('condition_value')->nullable(); // category_id, product_id
 
-            $table->integer('type'); // 1=percentage, 2=fixed amount, 3=free product
+            $table->integer('type'); // 1=Equal, 2=Less than, 3=Less Than or Equal, 4=Greater Than, 5=Greater Than or Equal
             $table->unsignedInteger('apply_type'); // 1=total, 2=product
             $table->unsignedInteger('buy');
             $table->unsignedInteger('get');
